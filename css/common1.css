@@ -1,0 +1,640 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  font-family: iconfont, Hui-iconfont;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: Black;
+}
+
+#jm-container {
+  background-color: #E9E9E9;
+}
+
+#jm-wrapper {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+#jm-logo {
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/*侧边栏开始*/
+#jm-sidebar {
+  background-color: #545454;
+}
+
+.jm-menuItem {
+}
+
+.jm-menuItem-current {
+  
+}
+
+.jm-menuItemTitle a, .jm-menuItemTitle a:visited {
+  color: #FFFFFF;
+}
+
+.jm-menuItem-current .jm-menuItemTitle {
+  padding: 15px 10px;
+  color: #FFFFFF;
+  background-color: #444444;
+}
+
+.jm-menuItem .jm-menuItemTitle {
+  padding: 15px 10px;
+  color: #FFFFFF;
+  background-color: #545454;
+}
+
+.jm-menuIcon-fold {
+  display: inline-block;
+  float: right;
+}
+
+.jm-menuItem-current .jm-menuIcon-fold::before {
+  content: "\f0170";
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.jm-menuItem .jm-menuIcon-fold::before {
+  content: "\f016d";
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+.jm-menuIcon-prefix {
+  margin-right: 5px;
+  font-size: 16px;
+  color: #108CEE;
+}
+
+.jm-menuItem .jm-subMenu {
+  display: none;
+}
+
+.jm-menuItem-current .jm-subMenu {
+  display: block;
+}
+
+.jm-subMenu {
+  list-style: none;
+}
+
+.jm-subMenu li {
+  padding: 10px 5px 10px 30px;
+}
+
+.jm-subMenu li:hover {}
+
+.jm-subMenu li:active {}
+
+.jm-subMenu li a, jm-subMenu li a:visited {
+  color: #FFFFFF;
+}
+
+.jm-subMenu li a:hover {}
+
+.jm-subMenu li a:active {}
+
+.jm-subMenuItem-current {
+  background-color: red;
+}
+
+.jm-subMenuItem-current a, .jm-subMenuItem-current a:visited {
+  color: #afe;
+}
+
+.jm-subMenuItem {
+  background-color: #545454;
+}
+
+.jm-subMenuItem a, .jm-subMenuItem a:visited {
+  color: #FFFFFF;
+}
+/*侧边栏结束*/
+
+#jm-main {
+  /*background-color: #FFFFFF;
+  margin: 10px 10px 10px 0;
+  padding: 10px;*/
+}
+
+
+#jm-main-header {
+  margin: 0px;
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+
+#jm-main-body {
+  /*margin: 10px;
+  background-color: #FFFFFF;*/
+}
+
+/*盒子样式开始*/
+.jm-box { border: 1px dashed red;}
+
+.jm-boxTitle {
+  padding: 10px 20px;
+  border-bottom: 1px solid #D0D0D0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #108CEE;
+}
+
+.jm-boxContent {
+  padding: 5px;
+}
+
+.jm-box2col {
+  margin: 5px;
+  float: left;
+  width: 365px;
+  /*border: 1px dashed Red;*/
+}
+
+.jm-boxTab {
+  margin: 5px;
+  float: left;
+  width: 740px;
+  border: 1px solid #D0D0D0;
+}
+
+.jm-boxTab .jm-boxTitle {
+  padding: 0;
+  border-bottom: 1px solid #D0D0D0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.jm-boxTab ul {
+  list-style: none;
+}
+
+.jm-boxTab li {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0;
+  border-right: 1px solid #D0D0D0;
+  background-color: #108CEE;
+}
+
+.jm-boxTab li a, .jm-boxTab li a:visited {
+  color: #FFFFFF;
+}
+
+.jm-box1 {}
+
+.jm-box1 .jm-boxContainer {
+  padding: 0;
+}
+
+.jm-box1 .jm-boxTable tbody tr {
+  border-top: 0;
+  border-bottom: 1px dashed #D0D0D0;
+}
+
+.jm-box1 .jm-boxTable td {
+  padding: 25px 0 5px;
+}
+
+.jm-box1 .jm-boxTable td:first-child {
+  width: 20%;
+  text-align: right;
+}
+
+.jm-box1 .jm-boxTable td:last-child {
+  width: 80%;
+  text-align: left;
+}
+/*盒子样式结束*/
+
+/*表单样式开始*/
+.jm-box2 {
+}
+
+/*@media (min-width: 576px)  {
+  .container  {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px)  {
+  .container  {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 980px)  {
+  .container  {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px)  {
+  .container  {
+    max-width: 1140px;
+  }
+}*/
+
+.jm-formItemGroup {
+  background-color: #FFFFFF;
+  padding: 5px;
+  border: 1px dashed Red;
+}
+
+.jm-formItemGroupTitle {
+  padding: 10px 15px;
+  border-bottom: 1px solid #D0D0D0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #6E6E6E;
+}
+
+.jm-formItemGroupBox {
+}
+
+.jm-formItemWrapper {
+  margin: 0;
+  padding: 10px 3px;
+}
+
+.jm-fieldLabel {
+  width: 100px;
+  padding: 8px 5px;
+  display: block;
+  float: left;
+}
+
+.jm-formItem {
+  float: left;
+}
+
+.jm-fieldWrapper {
+  width: 200px;
+  float: left;
+  margin: 0 5px;
+}
+
+.jm-fieldWrapper input {
+  width: 200px;
+  height: 26px;
+  padding: 2px 5px;
+  border: 1px solid #99C4EA;
+  border-radius: 2px;
+  outline: none;
+}
+
+.jm-fieldWrapper textarea {
+  width: 200px;
+  padding: 2px 5px;
+  border: 1px solid #99C4EA;
+  border-radius: 2px;
+  outline: none;
+}
+
+.jm-fieldWrapper select {
+  width: 200px;
+  height: 26px;
+  border: 1px solid #99C4EA;
+  border-radius: 2px;
+  outline: none;
+}
+
+.jm-fieldWrapper select[multiple="multiple"] {
+  width: 200px;
+  height: 80px;
+  border: 1px solid #99C4EA;
+  border-radius: 2px;
+  outline: none;
+}
+
+.jm-fieldWrapper option {
+  width: 192px;
+  padding: 1px;
+  margin: 1px 3px;
+}
+
+.jm-fieldWrapper input:focus, .jm-fieldWrapper textarea:focus, .jm-fieldWrapper select:focus, .jm-fieldWrapper input:hover, .jm-fieldWrapper textarea:hover, .jm-fieldWrapper select:hover {
+  border: 1px solid #03A9F4;
+  box-shadow: 0 0 2px #03A9F4;
+}
+
+.jm-fieldWrapper label {
+  display: inline-block;
+  margin: 5px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin: 5px;
+}
+
+.jm-fieldWrapper input[type="radio"]:focus, .jm-fieldWrapper input[type="checkbox"]:focus, .jm-fieldWrapper input[type="file"]:focus, .jm-fieldWrapper input[type="radio"]:hover, .jm-fieldWrapper input[type="checkbox"]:hover, .jm-fieldWrapper input[type="file"]:hover {
+  box-shadow: none;
+}
+
+.jm-fieldWrapper button {
+  padding: 5px 15px;
+  margin: 2px 5px;
+  letter-spacing: 2px;
+  background-color: #108CEE;/*#0080C8;*/
+  border: 1px solid #108CEE;/*#0080C8;*/
+  color: #FFFFFF;
+  outline: none;
+}
+
+.jm-fieldWrapper button:focus {
+  background-color: #108CEE;
+  border: 1px solid #108CEE;
+}
+
+.jm-fieldWrapper button:hover {
+  background-color: #108CEE;
+  border: 1px solid #108CEE;
+}
+
+.jm-fieldWrapper button:active {
+  background-color: #209BFD;
+  border: 1px solid #209BFD;
+}
+
+input[type="file"], input[type="file"]:focus, input[type="file"]:hover {
+  border: 1px dashed Red;
+}
+
+input[type="file"]:active {
+  background-color: Red;
+}
+
+.jm-formItemHelp {
+  font-size: 12px;
+  color: #737574;
+  padding: 2px 4px;
+  float: left;
+  margin: 0 5px;
+}
+
+/*垂直排列*/
+.jm-box2 .jm-form-item-group {
+  width: 328px;/*注释掉此两项，表单项即和帮助文本呈水平排列*/
+}
+
+.jm-box2 .jm-formItem {
+  width: 210px;/*注释掉此项，表单项即和帮助文本呈水平排列*/
+}
+/*表单样式结束*/
+
+/*表格样式开始*/
+.jm-boxTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.jm-boxTable tr {}
+
+.jm-boxTable thead tr {
+  border-top: 2px solid #A1A1A1;
+}
+
+.jm-boxTable tbody tr {
+  border-top: 1px solid #D0D0D0;
+  border-bottom: 1px solid #D0D0D0;
+}
+
+.jm-boxTable tbody tr:focus, .jm-boxTable tBody tr:hover {
+  border-top: 2px solid #F7AE6A;
+  border-bottom: 2px solid #F7AE6A;
+}
+
+.jm-boxTable tbody tr:active {
+  border-top: 2px solid #F7AE6A;
+  border-bottom: 2px solid #F7AE6A;
+  background-color: #F2F2DF;
+}
+
+/*.jm-boxTable tfoot tr {
+  border-top: 1px solid #D0D0D0;
+  border-bottom: 2px solid #A1A1A1;
+}*/
+
+.jm-boxTable th {
+  padding: 10px 5px;
+}
+
+.jm-boxTable td {
+  padding: 10px 5px;
+}
+
+.jm-table-topbar { border:1px dashed red;}
+
+.jm-table-topbar-left {
+  padding: 12px 0;
+  /*background: #A3D0C3;*/
+  float: left;
+}
+
+.jm-table-topbar-left select {
+  margin: 0 5px;
+  display: inline-block;
+  border: 1px solid #7BA7AB;
+  outline: none;
+  padding: 3px;
+}
+
+.jm-table-topbar-left option {}
+
+.jm-search {
+  padding: 10px 0;
+  /*background: #A3D0C3;*/
+  float: right;
+  border: 1px dashed red;
+}
+
+.jm-search form {
+  position: relative;
+  width: 240px;
+  margin: 0 auto;
+}
+
+.jm-search input  {
+  width: 100%;
+  height: 32px;
+  padding-left: 10px;
+  padding-right: 45px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  outline: none;
+  /*background: #F9F0DA;*/
+  color: #6E6E6E;/*#9E9C9C;*/
+}
+.jm-search button  {
+  position: absolute; 
+  top: 0;
+  right: 0px;
+  width: 42px;
+  height: 32px;
+  border: none;
+  background: #7BA7AB;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.jm-search button:before  {
+  content: "\e683";
+  font-family: Hui-iconfont;
+  font-size: 16px;
+  color: #FFFFFF;/*#F9F0DA;*/
+}
+
+/*分页*/
+.jm-pagination {
+  text-align: center;
+}
+
+.jm-p-outline {
+  display: inline-block;
+  float: left;
+  padding: 12px 0 2px;
+}
+
+.jm-previous {}
+
+.jm-next {}
+
+.jm-pagination ul {
+  list-style: none;
+  display: inline-block;
+}
+
+.jm-pagination li {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 2px;
+  border: 1px solid #108CEE;
+}
+
+.jm-current {
+  background-color: #108CEE;
+}
+
+.jm-redirect-div {
+  padding: 6px 0;
+  float: right;
+  /*background: #A3D0C3;*/
+}
+
+.jm-redirect-div form {
+  position: relative;
+  width: 80px;
+  margin: 0 auto;
+}
+
+.jm-redirect-div input  {
+  width: 100%;
+  height: 26px;
+  padding-left: 10px;
+  padding-right: 35px;
+  border: 1px solid #7BA7AB;
+  border-radius: 2px;
+  outline: none;
+  /*background: #F9F0DA;*/
+  color: #6E6E6E;/*#9E9C9C;*/
+}
+
+.jm-redirect-div button  {
+  position: absolute; 
+  top: 0;
+  right: 0px;
+  width: 32px;
+  height: 26px;
+  border: none;
+  background: #7BA7AB;
+  border-radius: 0 2px 2px 0;
+  cursor: pointer;
+}
+/*表格样式结束*/
+
+/*页脚开始*/
+#jm-main-footer {
+  background-color: #FFFFFF;
+  margin: 10px;
+  padding: 10px;
+  clear: both;
+}
+/*页脚结束*/
+
+/*信息框*/
+#jm-messageBox {
+  display: none;
+}
+
+.jm-infoBox {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #99C4EA;
+  background-color: #D1E4F3;
+}
+
+.jm-errorBox {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #E18B7C;
+  background-color: #FAD5CF;
+}
+
+.jm-errorBox:before {
+  content: "";
+  margin: 0 5px;
+  background: url(".jm-.jm-/img/icons/error.jm-png") no-repeat;
+  background-size: 11px 11px;
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+}
+
+.jm-warningBox {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #EAC572;
+  background-color: #FFE9AD;
+}
+
+.jm-successBox {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #83DE87;
+  background-color: #CCECBA;
+}
+
+.jm-mBox {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #FBE187;
+  background-color: #FFFFDF;
+}
+
+.jm-menuIcon-prefix {
+  width: 11px;
+  height: 11px;
+  margin: 0 5px;
+}
+/*信息框结束*/
+
+.jm-hidden {
+  clear: both;
+  height: 1px;
+}

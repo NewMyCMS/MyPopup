@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head> 
+<title>打字机</title>
+<meta charset=utf-8>
+<style type="text/css">
+#div{
+width: 600px;
+margin:0 auto;
+border: 1px solid red;
+height: 400px;
+padding: 20px;
+line-height: 30px;
+}
+</style>
+<script src="layer/layer.js"></script>  
+</head> 
+  
+<body> 
+<div id="div">
+</div>
+
+
+<script language="javascript">
+function  typer(id, strings/*文字段*/, sec/*时间秒*/){
+	var div = document.getElementById(id);
+	for(var i = 0, leng = strings.length; i < leng; i++){
+		let text = document.createTextNode(strings[i]);
+		let elem = document.createElement("div");
+		elem.appendChild(text);
+		setTimeout(function(){ div.appendChild(elem);}, 1000 * sec * (i + 1));
+	}
+}
+typer("div", ["宇宙牌打印机", "打印俩鸡蛋", "O", "O"]/*文字段*/, 2/*时间秒*/);
+
+layer.ready(function(){ 
+  layer.open({
+    type: 2,
+    title: '欢迎页',
+    maxmin: true,
+    area: ['800px', '500px'],
+    content: 'http://layer.layui.com/test/welcome.html',
+    end: function(){
+      layer.tips('Hi', '#about', {tips: 1})
+    }
+  });
+});
+</script>
+</body> 
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<title>MyPopup,一个javacript(js)弹出层、弹窗、对话框组件--欢迎访问麦草CMS--MyCMS</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="MyCMS" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="keywords" content="MyCMS,PHP,CMS,麦草CMS,MyPopup,javascript对话框,javascript弹出层,javascript弹窗,js对话框,js弹出层,js弹窗,web弹出层,web弹窗,div+css" />
+	<meta name="description" content="MyPopup,一个javacript(js)弹出层、弹窗、对话框组件。它不仅包含了alert,prompt,confirm等常用的对话框，还提供了气泡弹出层和自定义接口，让你轻松实现个性化的弹窗。MyPopup最大特色是调用时仅仅只要一个参数就可轻松实现点击弹出层外部关闭弹出层。" />
+	<link rel="stylesheet" type="text/css" href="css/grid.css" />
+	<link rel="stylesheet" type="text/css" href="css/common1.css" />
+	<link rel="stylesheet" type="text/css" href="../css/fonts/Hui-iconfont/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../css/fonts/iconfont/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../css/fonts/font-awesome/css/font-awesome.min.css" />
+	  <link rel="stylesheet" type="text/css" href="../syntaxhighlighter_3.0.83/styles/shCore.css" />  
+	  <link rel="stylesheet" type="text/css" href="../syntaxhighlighter_3.0.83/styles/shThemeDefault.css" />  
+		<script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shCore.js"></script>  
+		<script type="text/javascript" src="../syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script src="../js/core-1.js"></script>  
+    <script src="Mypopup/MyPopup.js"></script>
+<script type="text/javascript">  
+    SyntaxHighlighter.all();  
+</script>  
+	<!--[if lt IE 9]>
+	  <script src="../js/respond.js"></script>
+	  <script src="../js/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+  <body>
+	<!--封装页面开始-->
+	<div class="container" id="jm-container">
+	  <div class="row no-gutters" id="jm-wrapper">
+		<!--侧边栏开始-->
+		<div class="col-sm-3 col-md-2" id="jm-sidebar">
+		  <!--LOGO开始-->
+		  <div id="jm-logo"><h1>麦草CMS</h1></div>
+		  <!--LOGO结束-->
+		  <!--边栏目录开始-->
+		  <div id="jm-sidebar-menu">
+			<!--菜单开始-->
+			<nav class="jm-menuItem">
+			  <div class="jm-menuItemTitle"><span class="jm-menuIcon-prefix Hui-iconfont-shouye"></span><a href="#">概览</a></div>
+			  <!--<div class="jm-subMenu"></div>-->
+			</nav>
+			<!--菜单结束-->
+			<!--菜单开始-->
+			<nav class="jm-menuItem">
+			  <div class="jm-menuItemTitle"><span class="jm-menuIcon-prefix Hui-iconfont-bianji2"></span><a href="form-1.html">表单</a><span class="jm-menuIcon-fold"></span></div>
+			  <ul class="jm-subMenu">
+				<li><a href="form-1.html">表单</a></li>
+				<li><a href="editor-1.html">在线编辑器</a></li>
+			  </ul>
+			</nav>
+			<!--菜单结束-->
+			<!--菜单开始-->
+			<nav class="jm-menuItem">
+			  <div class="jm-menuItemTitle"><span class="jm-menuIcon-prefix Hui-iconfont-muban"></span><a href="table-1.html">表格</a><span class="jm-menuIcon-fold"></span></div>
+			  <ul class="jm-subMenu">
+				<li><a href="table-1.html">表格</a></li>
+			  </ul>
+			</nav>
+			<!--菜单结束-->
+			<!--菜单开始-->
+			<nav class="jm-menuItem">
+			  <div class="jm-menuItemTitle"><span class="jm-menuIcon-prefix Hui-iconfont-tishi"></span><a href="messageBox-1.html">信息框</a><span class="jm-menuIcon-fold"></span></div>
+			  <ul class="jm-subMenu">
+				<li><a href="messageBox-1.html">信息框</a></li>
+			  </ul>
+			</nav>
+			<!--菜单结束-->
+			<!--菜单开始-->
+			<nav class="jm-menuItem">
+			  <div class="jm-menuItemTitle"><span class="jm-menuIcon-prefix Hui-iconfont-chajian"></span><a href="box-1.html">盒子</a><span class="jm-menuIcon-fold"></span></div>
+			  <ul class="jm-subMenu">
+				<li><a href="box-1.html">盒子</a></li>
+			  </ul>
+			</nav>
+			<!--菜单结束-->
+		  </div>
+		</div>
+		<!--侧边栏结束-->
+		<!--主操作区开始-->
+		<div class="col-sm-9 col-md-10" id="jm-main">
+		  <!--页眉开始-->
+		  <div class="row no-gutters margin-1 bg-white">
+			<div class="col-sm-12 padding-10" id="jm-main-crumbs"><a href="/">首页</a>&gt;&gt;<a href="index.html">MyPopup弹出层</a></div>
+		  </div>
+		  <!--页眉结束-->
+		  <!--容器开始-->
+		  <div class="row no-gutters margin-1 bg-white">
+				<button type="button" onclick="openPopup(event)">自动从左下方弹出tip提示(随机展示)</button>
+				<button type="button" onclick="openPopup(event)" style="position: absolute; right:0">自动从右下方弹出tip提示(随机展示)</button>
+				<h3>简介</H3>
+		  <p>麦草CMS（MyCMS），简约而不简单。</p>
+<p>MyPopup，做的很少。MyPopup就像alert、confirm、propmt等控件一样仅仅弹出一个对话框，其他的交给回调函数yes和no甚至你绑定的事件处理函数，由你随意支配。MyPopup，做的很多。大多数情况下，你不用去管MyPopup弹出的位置、宽度、高度等等，MyPopup都会智能做出判断、渲染。
+MyPopup是一个JavaScript（js）弹出层、弹窗、对话框组件。MyPopup不仅模拟了alert、confirm、propmt等等控件，还扩展出tip（小提示框）、loading（加载中）、iframe（框架）、open（常规弹窗）、blank（空白弹出层）等等常用的弹出层。让我最满意的是tip()方法，它依附于目标弹出一个小提示框。tip()方法会根据目标元素智能渲染小提示框的位置和弹出方向。依据MyPopup的tip()方法可以轻松扩展出下拉菜单组件。小提示框有zhi（带直角尾巴）、zhi1（带边框的直角尾巴）、jian（带尖角尾巴）、noTail（不带尾巴）四种样式，调用方法是MyCMS.popup.tip("麦草CMS问候您",{tipStyle: "zhi"})。</p>
+<h3>简单使用</h3>
+<p>先容我为MyPopup弹出层吹嘘几句。MyPopup弹出层同时兼容PC端和移动端；MyPopup弹出层用法简单，js主文件引入是必不可少的，不再赘述，它的使用逻辑深度模仿alert、confirm、propmt等等原生对话框组件，简单使用MyPopup弹出层时和使用它们相似；大多数js弹出层插件和其他js插件或js功能的耦合度都很低，MyPopup弹出层也不例外，这就注定了MyPopup弹出层插件很容易整合进其他的js框架，理论上MyPopup弹出层可以不经过任何改写就能用在任何js框架中，具体我不好说，我没用过任何js框架。</p>
+<p>下载解压缩后的文件夹一级目录包含文件夹css、MyPopup，文件index.html，你只需要将MyPopup移入你的项目即可，其他的是演示文档。
+在页面的头部引入MyPopup文件夹下的MyPopup.js主文件。</p>
+MyPopup调用：
+			<pre class="brush: javascript">
+MyCMS.popup.alert("麦草CMS向你打招呼！", {width: "100%", top: 0, left: 0, 等等等等});
+MyCMS.popup.propmt("麦草CMS向你打招呼！", "默认值，我也不知道有什么用，反正一开始就有了", options);//options就是{width: "100%", top: 0, left: 0, 等等等等}(^~^)
+MyCMS.popup.confirm("麦草CMS向你打招呼！");
+//把MyCMS变短点：
+var p = MyCMS.popup;
+p.tip("麦草CMS向你打招呼！", {border: "1px solid red"});//内容是一个字符串
+p.tip(document.getElementById("myDiv"), {tipStyle: "zhi1"});//内容捕获自一个HTML元素
+var c = document.createElement("div");
+var d = document.createElement("div");
+var t = document.createTextNode("麦草CMS向你打招呼！");
+d.appendChild(t);//内容捕获自一个动态创建的元素
+c.appendChild(d);
+p.tip(c, document.getElementById("target"), {color: red});//document.getElementById("target"),弹出tip的目标元素
+//MyPopup弹出层返回弹出层的引用，你可以调用MyCMS.popup.colse()关闭弹出层。
+var p = MyCMS.popup.loading();
+MyCMS.popup.close(p);
+</pre>
+<h3>options配置项简介</h3>
+<p>MyPopup提供了尺寸参数width、height，定位参数position("fix","absolute")、top("30px")、right("10%")、bottom、left、direction("vertical","horizontal"等参数决定小提示框是从目标的上下左右弹出)、tipPosition("follow","target"决定当鼠标事件触发小提示框时，小提示框是依附于鼠标弹出还是依附于目标弹出)，样式参数color、bgColor、titleColor、titleBgColor、contentBgColor、buttonColor、buttonBgcolor、border、tipStyle，回调函数yes、no，按钮参数buttons({buttons: ["你好", "你坏"]}或{buttons: "你好"}或{buttons: ["", ""]}不显示按钮，目前只处理最多两个数组项，多余的项忽略，只穿一个值(字符串或控数组项)时是“确定”按钮值)、closeBtn(是否显示关闭按钮,true或false)，定时关闭参数time({time: 5.8},参数是浮点数,单位是秒)，标题title，是否带遮罩shade，是否点击弹出层关闭弹出层outerClick(除了alert,confirm,propmt外默认值true)，移动端特殊效果tipType({tipType: "larger"}，tip专用，模仿百度百科移动端弹出层)，弹出层的外观风格theme({theme: "myThenme"},自定义弹出层风格)。目前只这么多接口，至于弹出层样式若提供的接口不能满足，你可以直接修改弹出层样式表。
+</p>
+<h3>## 新增（2019/1/31）</H3>
+<p>新增func项，{func: function(index){//做想做的}}。在func函数中可以做一些与弹出层密切相关的事情。</p>
+<H3>## 变动（2019/2/13）</H3>
+<p>修复options配置项中tipeType项赋值时单词larger拼写错误。由原来的lager改为larger。同步更新简易文档中larger拼写错误。</p>
+<p>修复自定义风格接口代码块中的BUG。</p>
+<h3>自定义风格</h3>
+<p>关于自定义风格，存放于MyPopup的theme文件夹下，文件夹名即为风格名称(如myTheme)，样式表名称为MyPopup.css，所有的样式声明在以风格名称为名的类下(如.myTheme .popup{...})。</p>
+调用方式如下：
+			<pre class="brush: javascript">
+//全局调用(调用后整个页面应用该风格):
+MyCMS.popup.init("myTheme");
+MyCMS.popup.alert("全局配置我的弹出层风格");
+//局部调用(只需要在具体弹出层的options配置项中加入theme参数即可，如{theme: "myTheme"}):
+MyCMS.popup.alert("我要显得出众点", {theme: "myTheme"});
+</pre>
+<h3>MyPopup同时兼容PC端和移动端</H3>
+MyPopup同时兼容PC端和移动端。MyCMS智能判断系统类型，渲染相应风格。MyPopup不依赖任何js库。
+<p>暂时只这么介绍一下，会陆续完善文档。</p>
+<h3>杂项</H3>
+<p>后续会逐渐完善功能，解决兼容问题。那个悬浮的圆形关闭按钮是最后于匆忙中完成，未做细致调整美化，不是那么美观协调，请见谅。在阅读使用过程中有任何BUG、建议，请至QQ群：154340308留言指教</p>
+<p>在互联网高速发展的今天，Web前端弹出层组件多如牛毛，这只是我个人兴趣之作，去年在网上闲逛发现layer弹出层，一时兴起开始写MyPopup，半途而废，近日捡起来弄完了，MyPopup是个新生儿，在阅读使用过程中的BUG、建议请至http://www.mycms.xyz指教。在这个万物即将互联的时代，阅读方式不发生根本改变，javascript乃至整个web前端只会蓬勃发展。</p>
+<p>MyPopup使用Apache开源协议发布。</p>
+		  </div>
+		  <!--容器结束-->
+		  <!--容器开始-->
+		  <div class="row no-gutters margin-1 bg-white">
+			<pre class="brush: javascript">
+//var ss = MyCMS.popup.loading("&lt;i&gt;自定义弹出层&lt;/i&gt;");
+MyCMS.popup.set("defaultTitle", "&lt;u&gt;测试");//定义它的目的，暂时只为设置默认标题defaultTitle。由于未做限
+制(个人认为没有必要限制，除非你为了好玩去设置其它的项)，此方法可以改写MyCMS.popup所有属性和方法。
+//MyCMS.popup.iframe("blank.html", {width: "600px", height: "100%"});
+MyCMS.popup.alert("你满意这样的UI设计吗？这仅仅是一段提示，不会产生任何后台操作，请关闭对话框即可！嘿嘿嘿！哈哈哈！嘻嘻嘻嘻！哼哼哼！", {width: "260px", time: 5.8, top: 0, left: 0, yes: function(){ MyCMS.popup.alert("测试");}/*, bottom: "auto", right: "auto"*/});
+MyCMS.popup.prompt("你满意这样的UI设计吗？请你说说看法并做出选择！嘿嘿嘿！哈哈哈！嘻嘻嘻嘻！哼哼哼！", "满意！", {
+shade: false,//值为true或false，是否添加遮罩(某些大咖的对话框UI里定义为锁定，嘿嘿)，配合yes(),no()回调函数模拟JS阻塞。alert,prompt,confirm三个方法始终有遮罩，不可通过次参数更改。
+title: "",//弹窗的标题，不定义此项则默认标题(默认标题通过set(name, value)方法设置)生效。传入空字符串""则表示隐藏标题。
+time: 5.8,//是否定时关闭，为0时即为不定时，单位是秒，可接受形如 0.8, .8, 5.8, 8的数值。方法自动做了处理，值如果是字符串，则"8F"是值8，".8F"是0.8，"F8"是0，true是1等等，但字符串必须带引号。
+width: "350px",//弹窗宽度，带单位的字符串，如"23%"          /*****下面几项是设置CSS样式的，名值对对应CSS同名的样式*******/
+height: "450px",//弹窗高度，带单位的字符串，如"180px"       /********接受CSS样式值，请记住除0外都是带单位的字符串*******/
+top: "50px",//弹窗距顶部距离，带单位的字符串，如"23%"       ****        *这几项设置弹窗的位置      **** 默认相对窗口水平垂直居中，下面例子按top,right,bottom,left顺序，其中值为auto的项和方向相对的值都是0的项请忽略设置，这里仅为书写方便以及便于理解
+//right: "50px",//弹窗距右边距离，带单位的字符串，如"23%"     ****        *                      **** 左上: 0 auto auto 0  右上：0 0 auto auto         **方向相对的两项值相同即该方向上居中
+//bottom: "auto",//弹窗距顶底部距离，带单位的字符串，如"auto"  ****        *一般方向相对的两边不用同时设置 **** 左下：auto auto 0 0  右下：auto 0 0 auto         **具体请参照CSS中同名的属性设置，
+//left: "auto",//弹窗距左边距离，带单位的字符串，如"23%"       ****        *                      **** 上中：0 0 auto 0     下中：auto 0 0 0            **四个值默认为0。设置某项(即使其值是0)，相对的另一项值自动转为auto。
+position: "absolute",//弹窗的定位方式，默认是"fixed",值可为"relative","absolute","fixed"等
+style: "",//样式表引用，可在单独的样式表中做详细设置，在这里引入
+no: function(){ MyCMS.popup.alert("你点击了取消");},//点击否定按钮时的回调函数       /*****prompt的输入值通过data参数传递，为应对某些需求，两个回调函数均传递prompt输入值为data，即no回调函数也能接收输入框的值*****/
+yes: function(data){ MyCMSpopup.alert(data);}//点击否定按钮时的回调函数 /***********对其它弹窗类型没做回调函数限制，故均可设置回调函数，其data参数值分别是true和false,具体做什么，你自己斟酌**********/
+});
+MyCMS.popup.open("自定义弹出层", {width: "390px", height: "500px", shade: true});
+MyCMS.popup.confirm("你满意这样的UI设计吗？请做出你的选择！嘿嘿嘿！哈哈哈！嘻嘻嘻嘻！哼哼哼！", {buttons: ["", ""]});
+MyCMS.popup.open("自定义弹出层1");
+//弹窗模块的逻辑基本上和JS自带的对话框相同；遮罩即是假阻塞，模拟JS的阻塞。原本的返回值监听函数分别由yes和no回调函数担任，所以除了这一点，弹窗模块的用法和JS的对话框完全一样。理解了前面的一段话，你可以欢欢喜喜的用弹窗了。它们的参数传递也和JS对话框的一致；唯一的区别是它们多了一个options参数(弹窗配置)，options是一个对象字面量，此参数多数是一些CSS样式设置，和弹窗的呈现相关。至于你用MyCMS.popup的alert、confirm、prompt(传入这三个方法的任何字符都将呈现出来，如<html></html><script src="yy.js"></script>将显示为<html></html><script src="yy.js"></script>)三个方法之外的其它MyCMS.popup方法弄进弹窗的dom元素的，与弹窗的监听用户动作的回调函数无关的一些DOM操作，弹窗模块无权干涉；请尽量将它们放在回调函数的外面，最好也是放在MyCMS.popup之外。调用方法：MyCMS.popup.alert("你懂了吗", {title: "麦草CMS这样说：", width: "300px", .....})，MyCMS.popup.prompt("你喜欢弹窗模块吗？", "嗯嗯，非常喜欢！", {title: "麦草CMS这样说：", width: "300px", .....})
+//MyCMS.popup.close(ss);
+			</pre>
+		  </div>
+		  <!--容器结束-->
+		  <!--页脚开始-->
+		  <div class="row no-gutters margin-1 padding-10">你前面所关闭的一系列弹出层就是由上面的代码调用形成。MyPopup是一个javacript弹出层、弹窗、对话框组件。它不仅包含了alert,prompt,confirm等常用的对话框，还提供了气泡弹出层和自定义接口，让你轻松实现个性化的弹窗。MyPopup最大特色是调用时仅仅只要一个参数就可轻松实现点击弹出层外部关闭弹出层。</div>
+		  <!--页脚结束-->
+		  <!--页脚开始-->
+		  <div class="row no-gutters margin-1 padding-10"><h2><a href="MyPopup.rar">MyPopup下载</h2></a>
+				<button type="button" onclick="openPopup(event)">打开弹窗(随机展示)</button>
+				<button type="button" onclick="openPopup(event)" style="position: absolute; right:0; bottom:0">自动从右上方弹出tip提示(随机展示)</button>
+				<button type="button" onclick="openPopup(event)" style="position: absolute; right:0; bottom: 800px">我随页面滚动智能判断弹出方向(随机展示)</button>
+				<button type="button" onclick="closeQQ(event)">关闭圈圈(^~^)</button></div>
+		  <!--页脚结束-->
+		  <!--页脚开始-->
+		  <div class="row no-gutters margin-1 padding-10">页脚</div>
+		  <!--页脚结束-->
+		</div>
+		<!--主操作区结束-->
+	  </div>
+	</div>
+	<!--封装页面结束-->
+	<script type="text/javascript">
+function openPopup(evt){
+	var m = 0, n = 800, x, y, larger, direction;
+	x = n - m;
+	y = parseInt((Math.random() * x) + m, 10);
+	//y = y + "px";
+	larger = y > 400 ? "larger" : null;
+	direction = y > 400 ? 'horizontal' : null;
+	MyCMS.popup.tip( y + "<p>测试测试测试测试</p>测试测试测试测试<p>测试测试测试测试</p>测试测试测试测试\r\n", evt, {direction: direction, shade: false, bottom: y, left: y, tipStyle: "zhi1", tipType: larger});
+}
+function closeQQ(){
+	MyCMS.popup.close(ss);
+}
+var ss = MyCMS.popup.loading();
+MyCMS.popup.open("自定义弹出层6",{top:0});
+MyCMS.popup.confirm("你满意这样的UI设计吗？请做出你的选择！嘿嘿嘿！哈哈哈！嘻嘻嘻嘻！哼哼哼！", {buttons: ["", ""]});
+MyCMS.popup.prompt("你满意这样的UI设计吗？请做出你的选择！嘿嘿嘿！哈哈哈！嘻嘻嘻嘻！哼哼哼！", {buttons: ["t", "g"]});
+MyCMS.popup.alert("test", {titleBgColor: "red"})
+MyCMS.popup.blank("test");
+	</script><script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  </body>
+</html>
